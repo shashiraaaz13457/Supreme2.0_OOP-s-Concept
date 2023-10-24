@@ -13,7 +13,7 @@ int main(){
         int x = 44;
         cout<<x<<endl;
     }
-    int x = 20;//Local Variable
+    int x = 20;//Local Variable..
     cout<< x <<endl;
     cout<< ::x <<endl; //Accesing global Variable 
     fun();
