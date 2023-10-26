@@ -30,14 +30,16 @@ private:
         cout<<"Student parameterized ctor called"<<endl;
         
     }
-    Student(int _id,int _age,bool _present,string _name,int _nos){
-        id = _id;
-        age = _age;
-        name = _name;
-        present = _present;
-        nos = _nos;
+    Student(int id,int age,bool present,string name,int nos){
+        //this->id it shows the actual data member which is inside the class not present in parameter of the constructor.
+        //On the right hand side id represents the parameter one.
+        this->id = id;
+        this->age = age;
+        this->name = name;
+        this->present = present;
+        this->nos = nos;
         // gf = _gfname;
-        cout<<"Student parameterized ctor without gf called"<<endl;
+        cout<<"Student parameterized cctor without gf called"<<endl;
         
     }
 
@@ -66,6 +68,13 @@ int main(){
 
     Student s3(2,15,0,"lokesh",5);
     cout<<s3.name<<endl;
+
+    //Allocating on heap
+    Student *s4 = new Student (3,34,1,"Shashi",6);
+    cout<< s4->name <<endl;
+    cout<< (*s4).name <<endl;//Memory leak
+
+    delete s4; //no leak
 
     //If you don't assign value to your data member it will give senseless value.
     cout<< s1.age <<endl;
